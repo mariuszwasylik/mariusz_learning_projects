@@ -5,19 +5,18 @@ browser = webdriver.Chrome(executable_path='C:\\Users\Mariusz\Desktop\Testowanie
 browser.get('https://app-pea-author6-prod.avallain.net/login')
 browser.maximize_window()
 
+# login process
 username_input = browser.find_element_by_name('username')
 password_input = browser.find_element_by_name('password')
 
-# login process
 username_input.send_keys('mwasylik')
 password_input.send_keys('mariuszw')
-browser.maximize_window()
 
 login = browser.find_element_by_class_name('css-1eaa88k')
 login.submit()
 time.sleep(5.0)
 
-# home page navigation and creating Learning Object template
+# navigation and creating Learning Object template
 home = browser.find_element_by_id('app-navigation-home')
 home.click()
 
@@ -28,6 +27,7 @@ time.sleep(8.0)
 create_LO = browser.find_element_by_id('cmdBttWPCreateLO')
 create_LO.click()
 time.sleep(2.0)
+
 name_LO = browser.find_element_by_id('createLOForm:loName')
 name_LO.send_keys('test_object')
 
@@ -35,7 +35,7 @@ continue_button = browser.find_element_by_id('createLOForm:continueButton')
 continue_button.click()
 time.sleep(8.0)
 
-# editing options (sorry za brak definicji :) )
+# editing options (sorry za brak definicji :))
 browser.find_element_by_id('cmdBttEditLOOptions').click()
 time.sleep(4.0)
 browser.find_element_by_xpath('//*[@id="LOOptionsDialogForm:catoptions:optionslist:7:options:0:optionSelect"]/div[3]').click()
